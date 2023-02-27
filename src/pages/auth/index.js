@@ -17,6 +17,7 @@ export default function Auth() {
       const pos = Math.floor(Math.random() * chrs.length);
       str += chrs.substring(pos, pos + 1);
     }
+    console.log(isLoading);
     return str;
   }
 
@@ -31,7 +32,7 @@ export default function Auth() {
 
     socket.on("result-auth", (response) => {
       console.log(response);
-      const { successfully, token, expiresInToken } = response;
+      // const { successfully, token, expiresInToken } = response;
       setIsLoading(false);
     });
 
