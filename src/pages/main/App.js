@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  const telegram = window.Telegram.WebApp;
   const navigate = useNavigate();
 
   function getCookie(name) {
@@ -13,6 +14,7 @@ function App() {
   const userToken = getCookie("token");
 
   useEffect(() => {
+    telegram.ready();
     if (!userToken) {
       navigate("auth");
     }

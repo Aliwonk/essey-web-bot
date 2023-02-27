@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 // SVG ICONS
@@ -8,8 +8,8 @@ import { backendURL, botLoginURL } from "../../config";
 import { useState } from "react";
 
 export default function Auth() {
+  const telegram = window.Telegram.WebApp;
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
 
   console.log(isLoading);
   function generateUniqKey(length = 32) {
@@ -28,7 +28,7 @@ export default function Auth() {
     socket.on("connect", () => {
       socket.emit("auth-bot", uniqKey);
       setIsLoading(true);
-      navigate(botLoginURL);
+      telegram.openTelegramLink(botLoginURL);
     });
 
     socket.on("result-auth", (response) => {
