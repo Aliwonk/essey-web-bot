@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
 // SVG ICONS
@@ -9,7 +9,9 @@ import { useState } from "react";
 
 export default function Auth() {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
+  console.log(isLoading);
   function generateUniqKey(length = 32) {
     const chrs = "abcdehkmnpswxzABCDEFGHKMNPQRSTWXZ123456789";
     let str = "";
@@ -17,7 +19,6 @@ export default function Auth() {
       const pos = Math.floor(Math.random() * chrs.length);
       str += chrs.substring(pos, pos + 1);
     }
-    console.log(isLoading);
     return str;
   }
 
@@ -27,7 +28,7 @@ export default function Auth() {
     socket.on("connect", () => {
       socket.emit("auth-bot", uniqKey);
       setIsLoading(true);
-      window.location.href = botLoginURL;
+      navigate(botLoginURL);
     });
 
     socket.on("result-auth", (response) => {
