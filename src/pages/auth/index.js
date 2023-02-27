@@ -46,12 +46,12 @@ export default function Auth() {
   return (
     <div className="container">
       <div className="logo">TELIVERY</div>
-      <div
+      <button
         className="button"
         onClick={() => authSocket()}
       >
         Войти через <Telegram className="iconTelegram" width={23} height={23} />
-      </div>
+      </button>
       <div className="information">
         <p className="disclaymer">
           Регистрация также происходит в мессенджере телеграм
