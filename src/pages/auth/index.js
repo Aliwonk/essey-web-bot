@@ -23,7 +23,7 @@ export default function Auth() {
 
   useEffect(() => {
     tg.MainButton.show();
-    tg.MainButton.text = 'Авторизация';
+    tg.MainButton.text = 'АВТОРИЗАЦИЯ';
     tg.MainButton.color = '#08090a';
     tg.MainButton.textColor = '#f8f8f2';
   });
@@ -38,7 +38,7 @@ export default function Auth() {
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);
         setIsLoading(true);
-        tg.openLink(botLoginURL);
+        tg.openLink('https://vk.com');
       });
 
       socket.on("result-auth", (response) => {
