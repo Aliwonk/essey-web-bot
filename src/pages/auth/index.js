@@ -29,7 +29,6 @@ export default function Auth() {
   });
 
   tg.MainButton.onClick(() => {
-    alert(111);
     authSocket();
   });
 
@@ -39,7 +38,7 @@ export default function Auth() {
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);
         setIsLoading(true);
-        tg.openTelegramLink(botLoginURL);
+        tg.openLink(botLoginURL);
       });
 
       socket.on("result-auth", (response) => {
