@@ -8,7 +8,7 @@ import { backendURL, botLoginURL } from "../../config";
 
 // IMPORT UTILS
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { generateUniqKey } from "../../utils/getData";
 
 // SVG ICONS
@@ -16,13 +16,20 @@ import { generateUniqKey } from "../../utils/getData";
 import { ReactComponent as TelegramSVGIcon } from "../../assets/icon/telegram-wb.svg";
 import { useTelegram } from "../../hooks/useTelegram";
 
-
 export default function Auth() {
   const { tg } = useTelegram();
   const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
 
-  tg.MainButton.show();
+  useEffect(() => {
+    tg.MainButton.show();
+    tg.MainButton.setParams({
+      text: 'Войти',
+      color: 'black',
+      textColor: 'white',
+    });
+  })
+  tg.MainMenu.onClick()
   function authSocket() {
     const socket = io(`ws://${backendURL}:3000`);
     const uniqKey = generateUniqKey();
@@ -47,12 +54,12 @@ export default function Auth() {
   return (
     <div className="container">
       <div className="logo">TELIVERY</div>
-      <button
+      {/* <button
         className="button"
         onClick={() => authSocket()}
       >
         Войти через <TelegramSVGIcon className="iconTelegram" width={23} height={23} />
-      </button>
+      </button> */}
       <div className="information">
         <p className="disclaymer">
           Регистрация также происходит в мессенджере телеграм
