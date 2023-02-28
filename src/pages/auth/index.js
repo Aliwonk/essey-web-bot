@@ -2,33 +2,33 @@ import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
 import "./index.css";
 
-// SVG ICONS
-import { ReactComponent as Telegram } from "../../assets/icon/telegram-wb.svg";
+// IMPORT CONFIG
+
 import { backendURL, botLoginURL } from "../../config";
+
+// IMPORT UTILS
+
 import { useState } from "react";
+import { generateUniqKey } from "../../utils/getData";
+
+// SVG ICONS
+
+import { ReactComponent as TelegramSVGIcon } from "../../assets/icon/telegram-wb.svg";
+import { useTelegram } from "../../hooks/useTelegram";
+
 
 export default function Auth() {
-  const telegram = window.Telegram.WebApp;
+  const { tg } = useTelegram();
   const [isLoading, setIsLoading] = useState(false);
-
   console.log(isLoading);
-  function generateUniqKey(length = 32) {
-    const chrs = "abcdehkmnpswxzABCDEFGHKMNPQRSTWXZ123456789";
-    let str = "";
-    for (let i = 0; i < length; i++) {
-      const pos = Math.floor(Math.random() * chrs.length);
-      str += chrs.substring(pos, pos + 1);
-    }
-    return str;
-  }
 
   function authSocket() {
     const socket = io(`ws://${backendURL}:3000`);
-    const uniqKey = generateUniqKey()
+    const uniqKey = generateUniqKey();
     socket.on("connect", () => {
       socket.emit("auth-bot", uniqKey);
       setIsLoading(true);
-      telegram.openTelegramLink(botLoginURL);
+      tg.openTelegramLink(botLoginURL);
     });
 
     socket.on("result-auth", (response) => {
@@ -50,7 +50,7 @@ export default function Auth() {
         className="button"
         onClick={() => authSocket()}
       >
-        Войти через <Telegram className="iconTelegram" width={23} height={23} />
+        Войти через <TelegramSVGIcon className="iconTelegram" width={23} height={23} />
       </button>
       <div className="information">
         <p className="disclaymer">

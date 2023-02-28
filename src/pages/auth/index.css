@@ -5,6 +5,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color: white;
 }
 
 .logo {
@@ -38,7 +39,7 @@
 .information {
     width: 80%;
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(12px, 2.5vw, 14px);
     font-weight: 100;
     margin-top: 50px;
     color: rgb(120 120 120);
