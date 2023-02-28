@@ -13,7 +13,7 @@ import { generateUniqKey } from "../../utils/getData";
 
 // SVG ICONS
 
-import { ReactComponent as TelegramSVGIcon } from "../../assets/icon/telegram-wb.svg";
+// import { ReactComponent as TelegramSVGIcon } from "../../assets/icon/telegram-wb.svg";
 import { useTelegram } from "../../hooks/useTelegram";
 
 export default function Auth() {
@@ -24,30 +24,28 @@ export default function Auth() {
   useEffect(() => {
     tg.MainButton.show();
     tg.MainButton.text = 'Войти';
-    tg.MainButton.color = 'black';
-    tg.MainButton.textColor = 'white';
   });
-  
-  tg.MainMenu.onClick(authSocket);
+
+  // eslint-disable-next-line no-unused-vars
   function authSocket() {
-    const socket = io(`ws://${backendURL}:3000`);
-    const uniqKey = generateUniqKey();
-    socket.on("connect", () => {
-      socket.emit("auth-bot", uniqKey);
-      setIsLoading(true);
-      tg.openTelegramLink(botLoginURL);
-    });
+      const socket = io(`ws://${backendURL}:3000`);
+      const uniqKey = generateUniqKey();
+      socket.on("connect", () => {
+        socket.emit("auth-bot", uniqKey);
+        setIsLoading(true);
+        tg.openTelegramLink(botLoginURL);
+      });
 
-    socket.on("result-auth", (response) => {
-      console.log(response);
-      // const { successfully, token, expiresInToken } = response;
-      setIsLoading(false);
-    });
+      socket.on("result-auth", (response) => {
+        console.log(response);
+        // const { successfully, token, expiresInToken } = response;
+        setIsLoading(false);
+      });
 
-    setTimeout(() => {
-      setIsLoading(false);
-      socket.close();
-    }, 180 * 1000);
+      setTimeout(() => {
+        setIsLoading(false);
+        socket.close();
+      }, 180 * 1000);
   }
 
   return (
