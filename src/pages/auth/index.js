@@ -23,12 +23,11 @@ export default function Auth() {
 
   useEffect(() => {
     tg.MainButton.show();
-    tg.MainButton.setParams({
-      text: 'Войти',
-      color: 'black',
-      textColor: 'white',
-    });
-  })
+    tg.MainButton.text = 'Войти';
+    tg.MainButton.color = 'black';
+    tg.MainButton.textColor = 'white';
+  });
+  
   tg.MainMenu.onClick(authSocket);
   function authSocket() {
     const socket = io(`ws://${backendURL}:3000`);
