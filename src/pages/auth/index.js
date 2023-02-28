@@ -23,7 +23,7 @@ export default function Auth() {
 
   useEffect(() => {
     tg.MainButton.show();
-    tg.MainButton.text = 'Войти';
+    tg.MainButton.text = 'Авторизация';
     tg.MainButton.color = '#08090a';
     tg.MainButton.textColor = '#f8f8f2';
   });
@@ -54,12 +54,9 @@ export default function Auth() {
   return (
     <div className="container">
       <div className="logo">TELIVERY</div>
-      {/* <button
-        className="button"
-        onClick={() => authSocket()}
-      >
-        Войти через <TelegramSVGIcon className="iconTelegram" width={23} height={23} />
-      </button> */}
+      <div className="caption">
+        Для продолжения вам нужно авторизоваться
+      </div>
       <div className="information">
         <p className="disclaymer">
           Регистрация также происходит в мессенджере телеграм
