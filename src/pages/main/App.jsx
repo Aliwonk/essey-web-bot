@@ -21,8 +21,10 @@ function App() {
     <>
       <Layout>
         <div className={styles.App}>
-          <div>
-            <p></p>
+          <div className={styles.container}>
+            <div className={styles.ad}>
+              <p>Реклама</p>
+            </div>
           </div>
         </div>
       </Layout>
