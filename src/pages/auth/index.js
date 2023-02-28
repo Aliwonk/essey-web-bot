@@ -23,6 +23,7 @@ export default function Auth() {
   console.log(isLoading);
 
   function authSocket() {
+    alert(111);
     const socket = io(`ws://${backendURL}:3000`);
     const uniqKey = generateUniqKey();
     socket.on("connect", () => {
