@@ -35,10 +35,11 @@ export default function Auth() {
   function authSocket() {
       const socket = io(`ws://${backendURL}:3000`);
       const uniqKey = generateUniqKey();
+      alert(112);
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);
         setIsLoading(true);
-        tg.openLink('https://vk.com');
+        tg.openLink(botLoginURL);
       });
 
       socket.on("result-auth", (response) => {
