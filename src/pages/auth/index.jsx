@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
-import "./index.css";
+import styles from './Auth.module.css';
 
 // IMPORT CONFIG
 
@@ -58,15 +58,15 @@ export default function Auth() {
   }
 
   return (
-    <div className="container">
-      <div className="caption">
+    <div className={styles.container}>
+      <div className={styles.caption}>
         Для продолжения вам нужно авторизоваться
       </div>
-      <div className="information">
-        <p className="disclaymer">
+      <div className={styles.information}>
+        <p className={styles.disclaymer}>
           Регистрация также происходит в мессенджере телеграм
         </p>
-        <div className="privacy">
+        <div className={styles.privacy}>
           Продолжая, вы подтверждаете, что ознакомлены с
           <Link> Политикой конфиденциальности</Link> и принимете его условия
         </div>

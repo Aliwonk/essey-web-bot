@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { BottomNavigate } from "../../components/navigate";
+import Layout from "../../components/Layout";
 import { useTelegram } from "../../hooks/useTelegram";
 import { getCookie } from "../../utils/getData";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
   const { tg } = useTelegram();
@@ -19,8 +19,13 @@ function App() {
 
   return (
     <>
-      <div className="App">Hello world</div>
-      <BottomNavigate />
+      <Layout>
+        <div className={styles.App}>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </Layout>
     </>
   );
 }
