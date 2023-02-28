@@ -28,7 +28,10 @@ export default function Auth() {
     tg.MainButton.textColor = '#f8f8f2';
   });
 
-  tg.MainButton.onClick(authSocket);
+  tg.MainButton.onClick(() => {
+    alert(111);
+    authSocket();
+  });
 
   function authSocket() {
       const socket = io(`ws://${backendURL}:3000`);
@@ -53,7 +56,6 @@ export default function Auth() {
 
   return (
     <div className="container">
-      <div className="logo">TELIVERY</div>
       <div className="caption">
         Для продолжения вам нужно авторизоваться
       </div>
@@ -63,7 +65,7 @@ export default function Auth() {
         </p>
         <div className="privacy">
           Продолжая, вы подтверждаете, что ознакомлены с
-          <Link>Политикой конфиденциальности</Link> и принимете его условия
+          <Link> Политикой конфиденциальности</Link> и принимете его условия
         </div>
       </div>
     </div>
