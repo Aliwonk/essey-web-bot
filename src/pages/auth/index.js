@@ -24,9 +24,12 @@ export default function Auth() {
   useEffect(() => {
     tg.MainButton.show();
     tg.MainButton.text = 'Войти';
+    tg.MainButton.color = '#08090a';
+    tg.MainButton.textColor = '#f8f8f2';
   });
 
-  // eslint-disable-next-line no-unused-vars
+  tg.MainButton.onClick(authSocket);
+
   function authSocket() {
       const socket = io(`ws://${backendURL}:3000`);
       const uniqKey = generateUniqKey();
