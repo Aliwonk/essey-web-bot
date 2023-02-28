@@ -28,9 +28,7 @@ export default function Auth() {
     tg.MainButton.textColor = '#f8f8f2';
   });
 
-  tg.MainButton.onClick(() => {
-    authSocket();
-  });
+  tg.MainButton.onClick(authSocket);
 
   function authSocket() {
       const socket = io(`ws://${backendURL}:3000`);
