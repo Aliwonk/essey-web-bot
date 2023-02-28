@@ -29,7 +29,7 @@ export default function Auth() {
       textColor: 'white',
     });
   })
-  tg.MainMenu.onClick()
+  tg.MainMenu.onClick(authSocket);
   function authSocket() {
     const socket = io(`ws://${backendURL}:3000`);
     const uniqKey = generateUniqKey();
