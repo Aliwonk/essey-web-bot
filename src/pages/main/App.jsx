@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BottomNavigate } from "../../components/navigate";
 import { useTelegram } from "../../hooks/useTelegram";
 import { getCookie } from "../../utils/getData";
 import "./App.css";
@@ -11,12 +12,17 @@ function App() {
 
   useEffect(() => {
     tg.ready();
-    if (!userToken) {
+    if (userToken) {
       navigate("auth");
     }
   });
 
-  return <div>Hello world</div>;
+  return (
+    <>
+      <div className="App">Hello world</div>
+      <BottomNavigate />
+    </>
+  );
 }
 
 export default App;
