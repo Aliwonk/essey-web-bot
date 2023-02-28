@@ -22,8 +22,8 @@ export default function Auth() {
   const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
 
+  tg.MainButton.show();
   function authSocket() {
-    alert(111);
     const socket = io(`ws://${backendURL}:3000`);
     const uniqKey = generateUniqKey();
     socket.on("connect", () => {
