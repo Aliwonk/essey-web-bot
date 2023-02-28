@@ -34,10 +34,10 @@ export default function Auth() {
       const socket = io(`ws://${backendURL}:3000`);
       const uniqKey = generateUniqKey();
       alert(112);
+      tg.openTelegramLink(botLoginURL);
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);
         setIsLoading(true);
-        tg.openLink(botLoginURL);
       });
 
       socket.on("result-auth", (response) => {
