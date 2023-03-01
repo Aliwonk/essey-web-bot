@@ -1,0 +1,75 @@
+.shop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 6px;
+    width: 100%;
+    height: 110px;
+    margin-top: 15px;
+    box-shadow: 2px 2px 5px 0px rgba(34, 60, 80, 0.2);
+}
+
+.logotype{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    height: 75%;
+}
+
+.logotype img{
+    width: 90%;
+    height: 90%;
+    border-radius: 6px;
+}
+
+.inf {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.infShop{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 98%;
+    height: 60%;
+}
+.name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.annotation {
+    font-size: 12px;
+}
+
+.additInf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.badge{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.badge p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

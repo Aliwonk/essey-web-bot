@@ -1,16 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { backendURL } from "../../../config";
 
-export const fetchAllShopData = createAsyncThunk("shop/fetchAllShopData", async () => {
-  const response = await fetch(`${backendURL}/shop/all`);
-  const data = response.json();
-  return data;
-});
+export const fetchAllShopData = createAsyncThunk(
+  "shop/fetchAllShopData",
+  async () => {
+    const response = await fetch(`${backendURL}/shop/all`);
+    const data = response.json();
+    return data;
+  }
+);
 export const shopSlice = createSlice({
   name: "shop",
   initialState: {
     isLoading: false,
-    listShop: [{ id: 1, name: "Super Pizza", annotation: "Yammy pizza" }],
+    listShop: [
+      { id: 1, name: "Speed Pizza", annotation: "Пицца со скоростью света" },
+      { id: 2, name: "Speed Pizza", annotation: "Пицца со скоростью света" },
+    ],
   },
   reducers: {
     getShop: (state) => {
@@ -29,7 +35,7 @@ export const shopSlice = createSlice({
       .addCase(fetchAllShopData.rejected, (state, action) => {
         state.isLoading = false;
         state.shop = [];
-      })
+      });
   },
 });
 
