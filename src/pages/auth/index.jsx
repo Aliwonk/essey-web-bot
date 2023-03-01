@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './Auth.module.css';
 
 // IMPORT CONFIG
@@ -18,6 +18,7 @@ import { useTelegram } from "../../hooks/useTelegram";
 
 export default function Auth() {
   const { tg } = useTelegram();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
 
@@ -44,6 +45,7 @@ export default function Auth() {
 
         if (successfully && token && expiresInToken) {
           document.cookie = `token=${token}; expires=${parseInt(expiresInToken)}`;
+          navigate('/');
         } else {
           socket.close();
         }

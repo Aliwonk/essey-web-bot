@@ -1,9 +1,9 @@
 .App {
-  width: 94vw;
+  width: 93vw;
   height: 79vh;
-  padding-top: 55px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
 }
 
@@ -29,17 +29,4 @@
   color: white;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-}
-
-
-.caption {
-  width: 100%;
-  height: 50px;
-  margin-top: 10px;
-  text-align: left;
-}
-
-.caption p {
-  font-size: 18px;
-  font-weight: 600;
 }
