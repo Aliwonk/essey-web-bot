@@ -32,7 +32,7 @@ export default function Auth() {
   tg.MainButton.onClick(authSocket);
 
   function authSocket() {
-      const socket = io(`ws://${backendURL}:3000`);
+      const socket = io(`${backendURL}`);
       const uniqKey = generateUniqKey();
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);

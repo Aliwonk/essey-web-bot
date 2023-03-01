@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
+import ListShop from "../../components/shop/ListShop";
 import { useTelegram } from "../../hooks/useTelegram";
-import { getShop } from "../../redux/features/shop";
+import { fetchAllShopData } from "../../redux/features/shop";
 import { getCookie } from "../../utils/getData";
 import styles from "./App.module.css";
 
@@ -19,9 +20,10 @@ function App() {
     if (userToken) {
       navigate("auth");
     }
-    console.log(listShop);
-    dispatch( getShop() );
-  });
+
+    dispatch(fetchAllShopData());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -36,6 +38,8 @@ function App() {
             <div className={styles.caption}>
               <p>Компании</p>
             </div>
+
+            <ListShop dataShop={listShop} />
           </div>
         </div>
       </Layout>
