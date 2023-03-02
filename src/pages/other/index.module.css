@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+.infUser{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    margin-left: 25px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.fullName{
+    display: flex;
+    flex-direction: row;
+}
+
+.nameUser{
+    font-size: 19px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.surname{
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.role{
+    font-size: 13px;
+    margin-top: 10px;
+    color: grey;
+}
+
+.btnEdit{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+}

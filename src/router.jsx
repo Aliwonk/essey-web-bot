@@ -1,6 +1,7 @@
 import Auth from "./pages/auth";
 import App from "./pages/main/App";
 import Map from "./pages/map";
+import Other from "./pages/other";
 import Shop from "./pages/shop";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -28,6 +29,6 @@ export default createBrowserRouter([
     },
     {
         path: 'other',
-        element: <Shop />
+        element: <Other />
     }
 ])
