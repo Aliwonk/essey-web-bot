@@ -1,20 +1,26 @@
 import React from "react";
-import { backendURL } from "../../config";
+// import { backendURL } from "../../config";
 import styles from './listShop.module.css';
 
 // IMPORT SVG ICONS
 
 import { ReactComponent as GiftSVGIcon } from '../../assets/icon/shop/gift.svg';
 import { ReactComponent as CardSVGIcon } from '../../assets/icon/shop/credit_card.svg';
+import { ReactComponent as CoinsSVGIcon } from '../../assets/icon/shop/Coins.svg';
 
 export default function ListShop(props) {
     const { dataShop } = props;
-    console.log(dataShop);
+    let writeOff = 0;
+    let cashback = 0;
     const item = dataShop.map((element, index) => {
+        if (element.plansCashback !== undefined) {
+            writeOff = element.plansCashback[0].writeoff;
+            cashback = element.plansCashback[0].cashback;
+        }
         return (
             <div className={styles.shop} key={index}>
                 <div className={styles.logotype}>
-                    <img src={backendURL + element.logotype} alt="" />
+                    <img src={element.logotype} alt="" />
                 </div>
                 <div className={styles.inf}>
                     <div className={styles.infShop}>
@@ -28,11 +34,17 @@ export default function ListShop(props) {
                     <div className={styles.additInf}>
                         <div className={styles.badge}>
                             <CardSVGIcon width={25} height={25} />
-                            <p>30 %</p>
+                            <p>от {writeOff}%</p>
                         </div>
+                        {/* {element.firstcashback > 0 && ( */}
                         <div className={styles.badge}>
                             <GiftSVGIcon width={25} height={25} />
-                            <p>100</p>
+                            <p style={{marginTop: 4}}>{element.firstcashback || 0}</p>
+                        </div>
+                        {/* )} */}
+                        <div className={styles.badge}>
+                            <CoinsSVGIcon style={{marginTop: 4.5}} width={25} height={25} />
+                            <p>от {cashback}%</p>
                         </div>
                     </div>
                 </div>

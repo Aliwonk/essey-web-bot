@@ -14,8 +14,20 @@ export const shopSlice = createSlice({
   initialState: {
     isLoading: false,
     listShop: [
-      { id: 1, name: "Speed Pizza", annotation: "Пицца со скоростью света" },
-      { id: 2, name: "Speed Pizza", annotation: "Пицца со скоростью света" },
+      {
+        id: 1,
+        name: "Speed Pizza",
+        annotation: "Пицца со скоростью света",
+        logotype:
+          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+      },
+      {
+        id: 2,
+        name: "Speed Pizza",
+        annotation: "Пицца со скоростью света",
+        logotype:
+          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+      },
     ],
   },
   reducers: {
