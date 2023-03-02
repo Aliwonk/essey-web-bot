@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
+import ListBtnShopCategory from "../../components/shop/ListBtnShopCategory";
 import ListShop from "../../components/shop/ListShop";
 import { useTelegram } from "../../hooks/useTelegram";
 import { fetchAllShopData } from "../../redux/features/shop";
@@ -24,7 +25,7 @@ function App() {
     dispatch(fetchAllShopData());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return (
     <>
       <Layout>
@@ -38,7 +39,7 @@ function App() {
             <div className={styles.caption}>
               <p>Компании</p>
             </div>
-
+            <ListBtnShopCategory />
             <ListShop dataShop={listShop} />
           </div>
         </div>

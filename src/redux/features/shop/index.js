@@ -18,6 +18,7 @@ export const shopSlice = createSlice({
         id: 1,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
+        category: 'Рестораны',
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -25,6 +26,7 @@ export const shopSlice = createSlice({
         id: 2,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
+        category: 'Магазины',
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },

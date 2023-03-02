@@ -1,12 +1,13 @@
 import React from "react";
 // import { backendURL } from "../../config";
-import styles from './listShop.module.css';
+import styles from './styles/listShop.module.css';
 
 // IMPORT SVG ICONS
 
 import { ReactComponent as GiftSVGIcon } from '../../assets/icon/shop/gift.svg';
 import { ReactComponent as CardSVGIcon } from '../../assets/icon/shop/credit_card.svg';
 import { ReactComponent as CoinsSVGIcon } from '../../assets/icon/shop/Coins.svg';
+import { backendURL } from "../../config";
 
 export default function ListShop(props) {
     const { dataShop } = props;
@@ -20,7 +21,7 @@ export default function ListShop(props) {
         return (
             <div className={styles.shop} key={index}>
                 <div className={styles.logotype}>
-                    <img src={element.logotype} alt="" />
+                    <img src={backendURL + element.logotype || element.logotype} alt="" />
                 </div>
                 <div className={styles.inf}>
                     <div className={styles.infShop}>

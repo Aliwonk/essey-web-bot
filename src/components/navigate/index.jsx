@@ -1,4 +1,4 @@
-import './index.css';
+import styles from './index.module.css';
 
 // IMPORT SVG ICONS
 import { ReactComponent as HomeSVGIcon } from '../../assets/icon/bottomNavigate/Home_alt.svg';
@@ -8,20 +8,23 @@ import { ReactComponent as OtherSVGIcon } from '../../assets/icon/bottomNavigate
 
 export function BottomNavigate() {
     return (
-        <div className="bottomNavigate">
-            <div className='btn'>
+        <div className={styles.bottomNavigate}>
+            <div className={styles.btn}>
                 <HomeSVGIcon width={20} height={20} />
                 <p>Главная</p>
             </div>
-            <div className='btn'>
+            <div className={styles.btn}>
                 <LocationSVGIcon width={23} height={21} />
                 <p>Карта</p>
             </div>
-            <div className='btn'>
+            <div className={styles.btn}>
                 <CartSVGIcon width={23} height={23} />
+                <div className={styles.countCart}>
+                    <p>1500</p>
+                </div>
                 <p>Корзина</p>
             </div>
-            <div className='btn'>
+            <div className={styles.btn}>
                 <OtherSVGIcon width={23} height={23} />
                 <p>Еще</p>
             </div>
