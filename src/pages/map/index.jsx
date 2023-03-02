@@ -2,6 +2,7 @@
 import mapboxgl from "!mapbox-gl";
 import { useEffect, useRef, useState } from "react";
 import Layout from "../../components/Layout";
+import styles from './index.module.css';
 
 export default function Map() {
     const mapContainer = useRef(null);
@@ -34,7 +35,7 @@ export default function Map() {
 
     return (
         <Layout header={false}>
-            <div className="App">
+            <div className={styles.map}>
                 <div ref={mapContainer} style={{width: '100%', height: '100%'}}></div>
             </div>
         </Layout>
