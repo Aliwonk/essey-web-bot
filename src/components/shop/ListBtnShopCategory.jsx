@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from './styles/listBtnCategory.module.css';
 
 // IMPORT SVG ICON
@@ -7,9 +7,11 @@ import styles from './styles/listBtnCategory.module.css';
 import { ReactComponent as RestarauntSVGIcon } from '../../assets/icon/shop/Restaraunt.svg';
 import { ReactComponent as ShopSVGIcon } from '../../assets/icon/shop/Shop.svg';
 import { ReactComponent as CompanySVGIcon } from '../../assets/icon/shop/Company.svg';
+import { changeCategoryShop } from "../../redux/features/shop";
 
 export default function ListBtnShopCategory() {
     const { listShop } = useSelector((state) => state.shop);
+    const dispatch = useDispatch();
     const categoryShop = (() => {
         const categories = listShop.map(shop => shop.category);
         const uniqCategories = new Set(categories);
@@ -38,7 +40,9 @@ export default function ListBtnShopCategory() {
 
     const item = categoryShop.map((category, index) => {
         return (
-            <div className={styles.btn} key={index}>
+            <div className={styles.btn} key={index} onClick={() => {
+                dispatch( changeCategoryShop(category) );
+            }}>
                 <p>{category}</p>
                 <Icons category={category} />
             </div>

@@ -18,7 +18,7 @@ export const shopSlice = createSlice({
         id: 1,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: 'Рестораны',
+        category: "Рестораны",
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -26,7 +26,7 @@ export const shopSlice = createSlice({
         id: 2,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: 'Магазины',
+        category: "Магазины",
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -34,7 +34,7 @@ export const shopSlice = createSlice({
         id: 3,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: 'Магазины',
+        category: "Магазины",
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -42,7 +42,7 @@ export const shopSlice = createSlice({
         id: 4,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: 'Магазины',
+        category: "Магазины",
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -50,7 +50,7 @@ export const shopSlice = createSlice({
         id: 5,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: 'Магазины',
+        category: "Магазины",
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
@@ -60,6 +60,15 @@ export const shopSlice = createSlice({
     getShop: (state) => {
       console.log(state.shop);
     },
+    changeCategoryShop: (state, action) => {
+      if (action.payload === "Все") {
+        // eslint-disable-next-line no-self-assign
+        state.listShop = state.listShop;
+      }
+      state.listShop = state.listShop.filter(
+        (shop) => shop.category === action.payload
+      );
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -68,7 +77,7 @@ export const shopSlice = createSlice({
       })
       .addCase(fetchAllShopData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.listShop = action.payload;
+        // state.listShop = action.payload;
       })
       .addCase(fetchAllShopData.rejected, (state, action) => {
         state.isLoading = false;
@@ -77,5 +86,5 @@ export const shopSlice = createSlice({
   },
 });
 
-export const { getShop } = shopSlice.actions;
+export const { getShop, changeCategoryShop } = shopSlice.actions;
 export default shopSlice.reducer;
