@@ -18,6 +18,13 @@ function App() {
 
   useEffect(() => {
     tg.ready();
+    tg.expand();
+
+    tg.MainButton.show();
+    tg.MainButton.text = 'ЗАКРЫТЬ';
+    tg.MainButton.color = '#08090a';
+    tg.MainButton.textColor = '#f8f8f2';
+
     if (userToken) {
       navigate("auth");
     }
@@ -26,6 +33,9 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
+  tg.MainButton.onClick(() => {
+    tg.isExpended = false;
+  })
   return (
     <>
       <Layout>
