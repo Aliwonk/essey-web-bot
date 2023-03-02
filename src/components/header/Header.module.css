@@ -7,6 +7,8 @@
     padding: 10px;
     padding-right: 0px;
     padding-left: 0px;
+    background-color: white;
+    z-index: 9999;
 }
 .logotype {
     font-size: 24px;

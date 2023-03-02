@@ -30,6 +30,30 @@ export const shopSlice = createSlice({
         logotype:
           "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
       },
+      {
+        id: 3,
+        name: "Speed Pizza",
+        annotation: "Пицца со скоростью света",
+        category: 'Магазины',
+        logotype:
+          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+      },
+      {
+        id: 4,
+        name: "Speed Pizza",
+        annotation: "Пицца со скоростью света",
+        category: 'Магазины',
+        logotype:
+          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+      },
+      {
+        id: 5,
+        name: "Speed Pizza",
+        annotation: "Пицца со скоростью света",
+        category: 'Магазины',
+        logotype:
+          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+      },
     ],
   },
   reducers: {
@@ -44,7 +68,7 @@ export const shopSlice = createSlice({
       })
       .addCase(fetchAllShopData.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.listShop = action.payload;
+        // state.listShop = action.payload;
       })
       .addCase(fetchAllShopData.rejected, (state, action) => {
         state.isLoading = false;
