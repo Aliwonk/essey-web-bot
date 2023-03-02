@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <Layout>
-        <div className={styles.App}>
+        <div className='App'>
           <div className={styles.container}>
             
             <div className={styles.ad}>

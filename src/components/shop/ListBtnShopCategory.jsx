@@ -6,7 +6,7 @@ import styles from './styles/listBtnCategory.module.css';
 
 import { ReactComponent as RestarauntSVGIcon } from '../../assets/icon/shop/Restaraunt.svg';
 import { ReactComponent as ShopSVGIcon } from '../../assets/icon/shop/Shop.svg';
-// import { ReactComponent as CompanySVGIcon } from '../../assets/icon/shop/Company.svg';
+import { ReactComponent as CompanySVGIcon } from '../../assets/icon/shop/Company.svg';
 
 export default function ListBtnShopCategory() {
     const { listShop } = useSelector((state) => state.shop);
@@ -26,16 +26,13 @@ export default function ListBtnShopCategory() {
                 return <ShopSVGIcon width={25} height={20} />;
 
             default:
-                console.log('0');
-                break;
-            // return (
-            //   <CompanySVGIcon
-            //     style={{marginTop: 3}}
-            //     width={24}
-            //     height={24}
-            //     fill={'black'}
-            //   />
-            // );
+                return (
+                    <CompanySVGIcon
+                        style={{ marginTop: 3 }}
+                        width={25}
+                        height={20}
+                    />
+                );
         }
     };
 

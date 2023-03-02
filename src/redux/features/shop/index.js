@@ -68,7 +68,7 @@ export const shopSlice = createSlice({
       })
       .addCase(fetchAllShopData.fulfilled, (state, action) => {
         state.isLoading = false;
-        // state.listShop = action.payload;
+        state.listShop = action.payload;
       })
       .addCase(fetchAllShopData.rejected, (state, action) => {
         state.isLoading = false;

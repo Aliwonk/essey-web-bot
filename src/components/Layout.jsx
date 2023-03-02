@@ -1,10 +1,13 @@
 import { Header } from "./header";
 import { BottomNavigate } from "./navigate";
 
-export default function Layout({ children }) {
+export default function Layout(props) {
+  const { children, header = true } = props;
   return (
     <>
-      <Header />
+      {header && (
+        <Header />
+      )}
       {children}
       <BottomNavigate />
     </>
