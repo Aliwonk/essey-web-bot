@@ -10,10 +10,10 @@ import { ReactComponent as CompanySVGIcon } from '../../assets/icon/shop/Company
 import { changeCategoryShop } from "../../redux/features/shop";
 
 export default function ListBtnShopCategory() {
-    const { listShop } = useSelector((state) => state.shop);
+    const { listShopForCategory } = useSelector((state) => state.shop);
     const dispatch = useDispatch();
     const categoryShop = (() => {
-        const categories = listShop.map(shop => shop.category);
+        const categories = listShopForCategory.map(shop => shop.category);
         const uniqCategories = new Set(categories);
         return ['Все', ...uniqCategories];
     })();

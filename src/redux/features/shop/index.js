@@ -19,53 +19,56 @@ export const fetchShopData = createAsyncThunk(
   }
 );
 
+const shopData = [
+  {
+    id: 1,
+    name: "Speed Pizza",
+    annotation: "Пицца со скоростью света",
+    category: "Рестораны",
+    logotype:
+      "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
+  },
+  {
+    id: 2,
+    name: "Speed Pizza",
+    annotation: "Пицца со скоростью света",
+    category: "Магазины",
+    logotype:
+      "https://papik.pro/uploads/posts/2022-01/thumbs/1643629489_3-papik-pro-p-pitstsa-logotip-3.jpg",
+  },
+  {
+    id: 3,
+    name: "Speed Pizza",
+    annotation: "Пицца со скоростью света",
+    category: "Рестораны",
+    logotype:
+      "https://img.freepik.com/premium-vector/pizzeria-and-coffee-shop-logo_8580-556.jpg",
+  },
+  {
+    id: 4,
+    name: "Speed Pizza",
+    annotation: "Пицца со скоростью света",
+    category: "Магазины",
+    logotype:
+      "https://freelance.ru/img/portfolio/pics/00/26/37/2504452.jpg",
+  },
+  {
+    id: 5,
+    name: "Speed Pizza",
+    annotation: "Пицца со скоростью света",
+    category: "Рестораны",
+    logotype:
+      "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
+  },
+]
+
 export const shopSlice = createSlice({
   name: "shop",
   initialState: {
     isLoading: false,
     shop: {},
-    listShop: [
-      {
-        id: 1,
-        name: "Speed Pizza",
-        annotation: "Пицца со скоростью света",
-        category: "Рестораны",
-        logotype:
-          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
-      },
-      {
-        id: 2,
-        name: "Speed Pizza",
-        annotation: "Пицца со скоростью света",
-        category: "Магазины",
-        logotype:
-          "https://papik.pro/uploads/posts/2022-01/thumbs/1643629489_3-papik-pro-p-pitstsa-logotip-3.jpg",
-      },
-      {
-        id: 3,
-        name: "Speed Pizza",
-        annotation: "Пицца со скоростью света",
-        category: "Рестораны",
-        logotype:
-          "https://img.freepik.com/premium-vector/pizzeria-and-coffee-shop-logo_8580-556.jpg",
-      },
-      {
-        id: 4,
-        name: "Speed Pizza",
-        annotation: "Пицца со скоростью света",
-        category: "Магазины",
-        logotype:
-          "https://freelance.ru/img/portfolio/pics/00/26/37/2504452.jpg",
-      },
-      {
-        id: 5,
-        name: "Speed Pizza",
-        annotation: "Пицца со скоростью света",
-        category: "Рестораны",
-        logotype:
-          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
-      },
-    ],
+    listShopForCategory: shopData,
+    listShop: shopData,
   },
   reducers: {
     getShop: (state) => {
@@ -73,10 +76,10 @@ export const shopSlice = createSlice({
     },
     changeCategoryShop: (state, action) => {
       if (action.payload === "Все") {
-        // eslint-disable-next-line no-self-assign
-        state.listShop = state.listShop;
+        state.listShop = state.listShopForCategory;
+        return;
       }
-      state.listShop = state.listShop.filter(
+      state.listShop = state.listShopForCategory.filter(
         (shop) => shop.category === action.payload
       );
     },
