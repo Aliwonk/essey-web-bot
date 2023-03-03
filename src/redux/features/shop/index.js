@@ -39,7 +39,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
+          "https://papik.pro/uploads/posts/2022-01/thumbs/1643629489_3-papik-pro-p-pitstsa-logotip-3.jpg",
       },
       {
         id: 3,
@@ -47,7 +47,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
+          "https://img.freepik.com/premium-vector/pizzeria-and-coffee-shop-logo_8580-556.jpg",
       },
       {
         id: 4,
@@ -55,7 +55,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
+          "https://freelance.ru/img/portfolio/pics/00/26/37/2504452.jpg",
       },
       {
         id: 5,
