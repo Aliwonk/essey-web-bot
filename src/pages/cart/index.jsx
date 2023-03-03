@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 export default function Cart() {
     return (
         <Layout>
-            <div>CART</div>
+            <div className="App">CART</div>
         </Layout>
     )
 }

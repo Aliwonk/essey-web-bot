@@ -29,7 +29,7 @@ export default function Shop() {
             <div className={`${styles.app} App`}>
                 <div className={styles.container}>
                     <div className={styles.image}>
-                        <img src="https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg" srcSet="" alt="logotype shop"/>
+                        <img src="https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg" srcSet="" alt="logotype shop" />
                     </div>
                     <div className={styles.infShop}>
                         <div className={styles.genInfShop}>
@@ -56,17 +56,25 @@ export default function Shop() {
                                 <div className={styles.btns}>
                                     <div className={styles.navBtn}>
                                         <p>Маршрут</p>
-                                        <LocationSVGIcon width={25} height={25} style={{marginTop: 6}} />
+                                        <LocationSVGIcon width={25} height={25} style={{ marginTop: 6 }} />
                                     </div>
                                     <div className={styles.navBtn}>
                                         <p>Позвонить</p>
-                                        <PhoneSVGIcon width={25} height={25} style={{marginTop: 6}} />
+                                        <PhoneSVGIcon width={25} height={25} style={{ marginTop: 6 }} />
                                     </div>
                                     <div className={styles.navBtn}>
                                         <p>Написать</p>
-                                        <MessageSVGIcon width={25} height={25} style={{marginTop: 6}} />
+                                        <MessageSVGIcon width={25} height={25} style={{ marginTop: 6 }} />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className={styles.additInf}>
+                            <p className={styles.caption}>Доп. информация</p>
+                            <div className={styles.listInf}>
+                                <p>Бесплатная доставка от 300р</p>
+                                <p>Хорошее качество</p>
+                                <p>Быстрая пицца</p>
                             </div>
                         </div>
                     </div>
