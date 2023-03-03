@@ -5,14 +5,25 @@ export const fetchAllShopData = createAsyncThunk(
   "shop/fetchAllShopData",
   async () => {
     const response = await fetch(`${backendURL}/shop/all`);
-    const data = response.json();
+    const data = await response.json();
     return data;
   }
 );
+
+export const fetchShopData = createAsyncThunk(
+  "shop/fetchShopData",
+  async (id) => {
+    const response = await fetch(`${backendURL}/shop/${id}`);
+    const data = await response.json();
+    return data;
+  }
+);
+
 export const shopSlice = createSlice({
   name: "shop",
   initialState: {
     isLoading: false,
+    shop: {},
     listShop: [
       {
         id: 1,
@@ -82,6 +93,19 @@ export const shopSlice = createSlice({
       .addCase(fetchAllShopData.rejected, (state, action) => {
         state.isLoading = false;
         state.shop = [];
+      });
+
+    builder
+      .addCase(fetchShopData.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchShopData.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.shop = action.payload;
+      })
+      .addCase(fetchShopData.rejected, (state, action) => {
+        state.isLoading = false;
+        state.shop = {};
       });
   },
 });

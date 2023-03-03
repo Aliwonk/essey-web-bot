@@ -34,7 +34,7 @@ function App() {
   }, []);
   
   tg.MainButton.onClick(() => {
-    tg.isExpanded = false;
+    tg.expand()
   });
   return (
     <>

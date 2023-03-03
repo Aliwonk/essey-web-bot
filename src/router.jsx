@@ -1,8 +1,9 @@
 import Auth from "./pages/auth";
+import Cart from "./pages/cart";
 import App from "./pages/main/App";
 import Map from "./pages/map";
 import Other from "./pages/other";
-import Shop from "./pages/shop";
+import Shop, { loaderShop } from "./pages/shop";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -16,8 +17,9 @@ export default createBrowserRouter([
         element: <Auth />
     },
     {
-        path: 'shop',
-        element: <Shop />
+        path: 'shop/:id',
+        element: <Shop />,
+        loader: loaderShop,
     },
     {
         path: 'map',
@@ -25,7 +27,7 @@ export default createBrowserRouter([
     },
     {
         path: 'cart',
-        element: <Shop />
+        element: <Cart />
     },
     {
         path: 'other',

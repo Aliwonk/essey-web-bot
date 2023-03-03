@@ -8,9 +8,11 @@ import { ReactComponent as GiftSVGIcon } from '../../assets/icon/shop/gift.svg';
 import { ReactComponent as CardSVGIcon } from '../../assets/icon/shop/credit_card.svg';
 import { ReactComponent as CoinsSVGIcon } from '../../assets/icon/shop/Coins.svg';
 import { backendURL } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 export default function ListShop(props) {
     const { dataShop } = props;
+    const navigate = useNavigate();
     let writeOff = 0;
     let cashback = 0;
     const item = dataShop.map((element, index) => {
@@ -19,7 +21,7 @@ export default function ListShop(props) {
             cashback = element.plansCashback[0].cashback;
         }
         return (
-            <div className={styles.shop} key={index}>
+            <div className={styles.shop} onClick={() => navigate(`shop/${element.id}`)} key={index}>
                 <div className={styles.logotype}>
                     <img src={backendURL + element.logotype || element.logotype} alt="" />
                 </div>
