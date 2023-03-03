@@ -14,12 +14,67 @@
 }
 
 .app{
-    height: 79.8vh !important;
+    height: 79vh !important;
     padding-top: 10px !important;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
-    padding-top: 65px;
+    /* padding-top: 65px; */
+}
+
+.image{
+    width: 100%;
+    height: 200px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.inf{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.genInfShop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.caption{
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: grey;
+}
+
+.colName{
+    text-align: left;
+}
+.colCategory{
+    text-align: right;
+}
+.category{
+    font-size: 14px;
+}
+
+
+.annotShop{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
