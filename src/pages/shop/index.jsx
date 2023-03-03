@@ -17,7 +17,7 @@ export default function Shop() {
     return (
         <Layout header={false}>
             <div className={styles.header}>
-                <ArrowBackSVGIcon width={35} height={35} style={{ marginRight: 15, marginLeft: 15 }} onClick={() => {
+                <ArrowBackSVGIcon className={styles.headerBtnBack} width={35} height={35} onClick={() => {
                     navigate('/');
                 }} />
                 <div className={styles.headerTitle}>Speed Pizza</div>
@@ -39,7 +39,7 @@ export default function Shop() {
                             </div>
                         </div>
                         <div className={styles.annotShop}>
-                            <p className={styles.caption}>Описание</p>
+                            <p className={styles.caption}>Аннотацияы</p>
                             <p className={styles.annotation}>Пиццы со скоростью света</p>
                         </div>
                     </div>

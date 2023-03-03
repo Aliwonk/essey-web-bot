@@ -7,7 +7,7 @@ import styles from './styles/listShop.module.css';
 import { ReactComponent as GiftSVGIcon } from '../../assets/icon/shop/gift.svg';
 import { ReactComponent as CardSVGIcon } from '../../assets/icon/shop/credit_card.svg';
 import { ReactComponent as CoinsSVGIcon } from '../../assets/icon/shop/Coins.svg';
-import { backendURL } from "../../config";
+// import { backendURL } from "../../config";
 import { useNavigate } from "react-router-dom";
 
 export default function ListShop(props) {
@@ -23,7 +23,7 @@ export default function ListShop(props) {
         return (
             <div className={styles.shop} onClick={() => navigate(`shop/${element.id}`)} key={index}>
                 <div className={styles.logotype}>
-                    <img src={backendURL + element.logotype || element.logotype} alt="" />
+                    <img src={element.logotype} alt="Логотип компании" />
                 </div>
                 <div className={styles.inf}>
                     <div className={styles.infShop}>

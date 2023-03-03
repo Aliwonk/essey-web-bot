@@ -31,7 +31,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Рестораны",
         logotype:
-          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
       {
         id: 2,
@@ -39,7 +39,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
       {
         id: 3,
@@ -47,7 +47,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
       {
         id: 4,
@@ -55,7 +55,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
       {
         id: 5,
@@ -63,7 +63,7 @@ export const shopSlice = createSlice({
         annotation: "Пицца со скоростью света",
         category: "Магазины",
         logotype:
-          "https://avatars.mds.yandex.net/get-altay/4324851/2a00000179335f79ba33b1dbc7918fefe5ac/XXL_height",
+          "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
     ],
   },
