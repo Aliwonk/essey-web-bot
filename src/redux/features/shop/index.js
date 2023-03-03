@@ -45,7 +45,7 @@ export const shopSlice = createSlice({
         id: 3,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: "Магазины",
+        category: "Рестораны",
         logotype:
           "https://img.freepik.com/premium-vector/pizzeria-and-coffee-shop-logo_8580-556.jpg",
       },
@@ -61,7 +61,7 @@ export const shopSlice = createSlice({
         id: 5,
         name: "Speed Pizza",
         annotation: "Пицца со скоростью света",
-        category: "Магазины",
+        category: "Рестораны",
         logotype:
           "https://img.freepik.com/premium-vector/melting-pizza-logo-pizzeria-restaurant-with-melting-cheese-logo-icon-template_8580-559.jpg",
       },
