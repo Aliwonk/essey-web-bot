@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     tg.ready();
     tg.expand();
+    tg.disableClosingConfirmation();
 
     tg.MainButton.show();
     tg.MainButton.text = 'ЗАКРЫТЬ';
