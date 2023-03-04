@@ -19,23 +19,25 @@ function App() {
   useEffect(() => {
     tg.ready();
     tg.expand();
-    tg.disableClosingConfirmation();
 
     tg.MainButton.show();
     tg.MainButton.text = 'ЗАКРЫТЬ';
     tg.MainButton.color = '#08090a';
     tg.MainButton.textColor = '#f8f8f2';
 
+
+    tg.enableClosingConfirmation();
     if (userToken) {
       navigate("auth");
     }
 
+    console.log(tg);
     dispatch(fetchAllShopData());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   tg.MainButton.onClick(() => {
-    tg.expand()
+    tg.close();
   });
   return (
     <>
