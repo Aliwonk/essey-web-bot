@@ -9,6 +9,8 @@ import { ReactComponent as ClockSVGIcon } from '../../assets/icon/shop/clock.svg
 import { ReactComponent as LocationSVGIcon } from '../../assets/icon/bottomNavigate/Location.svg';
 import { ReactComponent as PhoneSVGIcon } from '../../assets/icon/shop/phone_portrait.svg';
 import { ReactComponent as MessageSVGIcon } from '../../assets/icon/shop/message_writing.svg';
+import { ReactComponent as RubleSVGIcon } from '../../assets/icon/shop/9113455_ruble_sign_solid_icon.svg';
+
 
 export function loaderShop({ params }) {
     console.log(params);
@@ -90,7 +92,7 @@ export default function Shop() {
                                         <p className={styles.descNews}>Получи пиццу 2 раза дешевле при вызове 5 звонков президенту с вопросом: что для него значит водка и виски</p>
                                     </div>
                                 </div>
-                                
+
                                 <div className={styles.itemNews}>
                                     <div className={styles.imgNews}>
                                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KD7-CockFL_lf9h_NvWCuJ6zupJ70kyQdA&usqp=CAU" alt="Картинка" />
@@ -99,6 +101,38 @@ export default function Shop() {
                                         <p className={styles.dateNews}>23.03.2023</p>
                                         <p className={styles.descNews}>Получи пиццу 2 раза дешевле при вызове 5 звонков президенту с вопросом: что для него значит водка и виски</p>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.goods}>
+                            <p className={styles.caption}>Товары</p>
+                            <div className={styles.itemGoods}>
+                                <div className={styles.infGoods}>
+                                    <p className={styles.nameGoods}>
+                                        Брусничный сок
+                                    </p>
+                                    <p className={styles.priceGoods}>
+                                        25
+                                        <RubleSVGIcon width={15} height={15} style={{marginTop: -5}} fill={'white'} /> 
+                                    </p>
+                                </div>
+                                <div className={styles.imgGoods}>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKwtJTy3ER8LXPTP-KUESrQjXFTZidT8luRg&usqp=CAU" alt="Картина товара" />
+                                </div>
+                            </div>
+                            <div className={styles.itemGoods}>
+                                <div className={styles.infGoods}>
+                                    <p className={styles.nameGoods}>
+                                        Пицца
+                                    </p>
+                                    <p className={styles.priceGoods}>
+                                        250
+                                        <RubleSVGIcon width={15} height={15} style={{marginTop: -5}} fill={'white'} /> 
+                                    </p>
+                                </div>
+                                <div className={styles.imgGoods}>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRSkx2CWoV-k8r7TfSygl7k88uvSb-ZkNMsQ&usqp=CAU" alt="Картина товара" />
                                 </div>
                             </div>
                         </div>
