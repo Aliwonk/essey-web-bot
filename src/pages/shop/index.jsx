@@ -81,12 +81,24 @@ export default function Shop() {
                         <div className={styles.news}>
                             <p className={styles.caption}>Новости и акции</p>
                             <div className={styles.listNews}>
-                                <div className={styles.imgNews}>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KD7-CockFL_lf9h_NvWCuJ6zupJ70kyQdA&usqp=CAU" alt="Картинка" />
+                                <div className={styles.itemNews}>
+                                    <div className={styles.imgNews}>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KD7-CockFL_lf9h_NvWCuJ6zupJ70kyQdA&usqp=CAU" alt="Картинка" />
+                                    </div>
+                                    <div className={styles.infNews}>
+                                        <p className={styles.dateNews}>23.03.2023</p>
+                                        <p className={styles.descNews}>Получи пиццу 2 раза дешевле при вызове 5 звонков президенту с вопросом: что для него значит водка и виски</p>
+                                    </div>
                                 </div>
-                                <div className={styles.infNews}>
-                                    <p className={styles.dateNews}>23.03.2023</p>
-                                    <p className={styles.descNews}>Получи пиццу 2 раза дешевле при вызове 5 звонков президенту с вопросом: что для него значит водка и виски</p>
+                                
+                                <div className={styles.itemNews}>
+                                    <div className={styles.imgNews}>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KD7-CockFL_lf9h_NvWCuJ6zupJ70kyQdA&usqp=CAU" alt="Картинка" />
+                                    </div>
+                                    <div className={styles.infNews}>
+                                        <p className={styles.dateNews}>23.03.2023</p>
+                                        <p className={styles.descNews}>Получи пиццу 2 раза дешевле при вызове 5 звонков президенту с вопросом: что для него значит водка и виски</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
