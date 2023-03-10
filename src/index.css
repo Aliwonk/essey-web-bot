@@ -13,8 +13,9 @@ body {
   padding-top: 35px;
   padding-left: 10px;
   padding-right: 10px;
-  text-align: center;
+  /* text-align: center; */
   overflow: scroll;
+  /* position: relative; */
 }
 
 /* code {

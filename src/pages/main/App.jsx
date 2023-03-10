@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
+import Loader from "../../components/loader";
 import ListBtnShopCategory from "../../components/shop/ListBtnShopCategory";
 import ListShop from "../../components/shop/ListShop";
 import { useTelegram } from "../../hooks/useTelegram";
@@ -11,7 +12,7 @@ import styles from "./App.module.css";
 
 function App() {
   const { tg } = useTelegram();
-  const { listShop } = useSelector((state) => state.shop);
+  const { listShop, isLoadingListShop } = useSelector((state) => state.shop);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userToken = getCookie("token");
@@ -31,11 +32,10 @@ function App() {
       navigate("auth");
     }
 
-    console.log(tg);
     dispatch(fetchAllShopData());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   tg.MainButton.onClick(() => {
     tg.close();
   });
@@ -44,7 +44,7 @@ function App() {
       <Layout>
         <div className='App'>
           <div className={styles.container}>
-            
+
             <div className={styles.ad}>
               <p>Реклама</p>
             </div>
@@ -52,8 +52,19 @@ function App() {
             <div className={styles.caption}>
               <p>Компании</p>
             </div>
-            <ListBtnShopCategory />
-            <ListShop dataShop={listShop} />
+            {
+              !isLoadingListShop ? (
+                <>
+                  <ListBtnShopCategory />
+                  <ListShop dataShop={listShop} />
+                </>
+              ) : (
+                  <Loader styleImg={{
+                    width: '30%',
+                    height: '30%'
+                  }} />
+              )
+            }
           </div>
         </div>
       </Layout>

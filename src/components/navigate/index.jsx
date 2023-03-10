@@ -7,8 +7,10 @@ import { ReactComponent as CartSVGIcon } from '../../assets/icon/bottomNavigate/
 import { ReactComponent as OtherSVGIcon } from '../../assets/icon/bottomNavigate/Circle_menu.svg';
 import { useNavigate } from 'react-router-dom';
 import { getCookie } from '../../utils/getData';
+import { useSelector } from 'react-redux';
 
 export function BottomNavigate() {
+    const { total } = useSelector(state => state.cart);
     const navigate = useNavigate();
     const countCart = getCookie('countCart');
 
@@ -31,7 +33,7 @@ export function BottomNavigate() {
             }}>
                 <CartSVGIcon width={23} height={23} />
                 <div className={styles.countCart}>
-                    <p>{countCart || 0}</p>
+                    <p>{total || 0}</p>
                 </div>
                 <p>Корзина</p>
             </div>

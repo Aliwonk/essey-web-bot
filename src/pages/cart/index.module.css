@@ -1,0 +1,162 @@
+.container{
+    padding-top: 30px;
+    width: 100%;
+    height: 95%;
+}
+
+.listOrder{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    padding-bottom: 170px;
+    position: absolute;
+}
+
+.order{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.shopName{
+    font-weight: 600;
+}
+
+.listGoods{
+    width: 97%;
+    height: auto;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.goods{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 7px 0px rgb(0 0 0 / 20%);
+}
+
+.imgGoods{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+
+.imgGoods img {
+    width: 80%;
+    height: 70%;
+    border-radius: 6px;
+}
+
+.leftGoods{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+
+.infGoods{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+}
+
+.goodsName{
+    font-size: 16px;
+    margin-top: 5px;
+    /* font-weight: 600; */
+}
+
+.goodsPrice{
+    display: flex;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 200;
+    color: grey;
+}
+
+.btnsGoods{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+    /* margin-top: 5px; */
+}
+
+.countBtn{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 30px;
+}
+
+.countBtn input{
+    width: 50%;
+    height: 15px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.countBtn div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+}
+
+.delBtn{
+    margin-right: 10px;
+}
+
+.bottomPanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    width: 94%;
+    height: 100px;
+    top: 75%;
+    position: fixed;
+    background-color: white;
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.totalText{
+    display: flex;
+}
+
+.btnOrder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92%;
+    height: 40px;
+    border-radius: 6px;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+}

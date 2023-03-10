@@ -1,5 +1,6 @@
 import Auth from "./pages/auth";
 import Cart from "./pages/cart";
+import Goods, { loaderGoods } from "./pages/goods";
 import App from "./pages/main/App";
 import Map from "./pages/map";
 import Other from "./pages/other";
@@ -22,6 +23,11 @@ export default createBrowserRouter([
         loader: loaderShop,
     },
     {
+        path: 'goods/:id',
+        element: <Goods />,
+        loader: loaderGoods,
+    },
+    {
         path: 'map',
         element: <Map />
     },
@@ -32,5 +38,5 @@ export default createBrowserRouter([
     {
         path: 'other',
         element: <Other />
-    }
+    },
 ])
