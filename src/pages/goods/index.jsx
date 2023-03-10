@@ -10,6 +10,7 @@ import styles from './index.module.css';
 
 import { ReactComponent as RubleSVGIcon } from '../../assets/icon/shop/9113455_ruble_sign_solid_icon.svg';
 import { changeDataCart, changeTotal } from "../../redux/features/cart";
+import Loader from "../../components/loader";
 // import { getCookie } from "../../utils/getData";
 
 let id;
@@ -155,8 +156,8 @@ export default function Goods() {
                             </div>
                         </div>
                     ) : (
-
-                        <div>Загрузка</div>
+                        <Loader styleImg={{width: '30%', height: '18%'}} />
+                        // <div>Загрузка</div>
                     )
                 }
             </div>

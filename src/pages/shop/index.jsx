@@ -14,6 +14,7 @@ import { ReactComponent as LocationSVGIcon } from '../../assets/icon/bottomNavig
 import { ReactComponent as PhoneSVGIcon } from '../../assets/icon/shop/phone_portrait.svg';
 import { ReactComponent as MessageSVGIcon } from '../../assets/icon/shop/message_writing.svg';
 import { ReactComponent as RubleSVGIcon } from '../../assets/icon/shop/9113455_ruble_sign_solid_icon.svg';
+import Loader from "../../components/loader";
 
 
 let id;
@@ -151,7 +152,8 @@ export default function Shop() {
                             </div>
                         </div>
                     ) : (
-                        <div>Загрузка</div>
+                        <Loader styleImg={{width: '50%', height: '30%'}} />
+                        // <div>Загрузка</div>
                     )
                 }
             </div>
