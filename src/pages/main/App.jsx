@@ -61,7 +61,7 @@ function App() {
               ) : (
                   <Loader styleImg={{
                     width: '30%',
-                    height: '30%'
+                    height: '25%'
                   }} />
               )
             }
