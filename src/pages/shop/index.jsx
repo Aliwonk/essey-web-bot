@@ -152,7 +152,7 @@ export default function Shop() {
                             </div>
                         </div>
                     ) : (
-                        <Loader styleImg={{width: '25%', height: '14%'}} />
+                        <Loader styleImg={{width: '25%', height: '16%'}} />
                         // <div>Загрузка</div>
                     )
                 }
