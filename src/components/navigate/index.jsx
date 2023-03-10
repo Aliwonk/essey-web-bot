@@ -6,13 +6,13 @@ import { ReactComponent as LocationSVGIcon } from '../../assets/icon/bottomNavig
 import { ReactComponent as CartSVGIcon } from '../../assets/icon/bottomNavigate/Cart_alt.svg';
 import { ReactComponent as OtherSVGIcon } from '../../assets/icon/bottomNavigate/Circle_menu.svg';
 import { useNavigate } from 'react-router-dom';
-import { getCookie } from '../../utils/getData';
+// import { getCookie } from '../../utils/getData';
 import { useSelector } from 'react-redux';
 
 export function BottomNavigate() {
     const { total } = useSelector(state => state.cart);
     const navigate = useNavigate();
-    const countCart = getCookie('countCart');
+    // const countCart = getCookie('countCart');
 
     return (
         <div className={styles.bottomNavigate}>
