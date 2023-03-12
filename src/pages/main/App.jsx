@@ -45,9 +45,9 @@ function App() {
         <div className='App'>
           <div className={styles.container}>
 
-            <div className={styles.ad}>
+            {/* <div className={styles.ad}>
               <p>Реклама</p>
-            </div>
+            </div> */}
 
             <div className={styles.caption}>
               <p>Компании</p>

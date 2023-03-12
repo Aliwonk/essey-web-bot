@@ -91,13 +91,13 @@ export default function Goods() {
                     const unique = [...new Map(copyDataCart.map(item => [item[key], item])).values()]
 
                     window.localStorage.setItem('dataCart', JSON.stringify(unique));
+                    window.localStorage.setItem('cartAmount', total + price * count);
                     dispatch(changeDataCart(unique));
+                    dispatch(changeTotal(total + price * count));
                 } else {
-                    console.log('111');
+                    console.log(result);
                 }
 
-                window.localStorage.setItem('cartAmount', total + price * count);
-                dispatch(changeTotal(total + price * count));
             } else {
                 const data = [...dataCart, {
                     idShop: shop.id,

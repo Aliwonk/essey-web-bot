@@ -35,22 +35,26 @@ export default function ListShop(props) {
                             <p>{element.annotation}</p>
                         </div>
                     </div>
-                    <div className={styles.additInf}>
-                        <div className={styles.badge}>
-                            <CardSVGIcon width={25} height={25} />
-                            <p>от {writeOff}%</p>
-                        </div>
-                        {/* {element.firstcashback > 0 && ( */}
-                        <div className={styles.badge}>
-                            <GiftSVGIcon width={25} height={25} />
-                            <p style={{marginTop: 4}}>{element.firstcashback || 0}</p>
-                        </div>
-                        {/* )} */}
-                        <div className={styles.badge}>
-                            <CoinsSVGIcon style={{marginTop: 4.5}} width={25} height={25} />
-                            <p>от {cashback}%</p>
-                        </div>
-                    </div>
+                    {
+                        element.plansCashback !== undefined && element.plansCashback.length > 0 && (
+                            <div className={styles.additInf}>
+                                <div className={styles.badge}>
+                                    <CardSVGIcon width={25} height={25} />
+                                    <p>от {writeOff}%</p>
+                                </div>
+                                {element.firstcashback > 0 && (
+                                    <div className={styles.badge}>
+                                        <GiftSVGIcon width={25} height={25} />
+                                        <p style={{ marginTop: 4 }}>{element.firstcashback || 0}</p>
+                                    </div>
+                                )}
+                                <div className={styles.badge}>
+                                    <CoinsSVGIcon style={{ marginTop: 4.5 }} width={25} height={25} />
+                                    <p>от {cashback}%</p>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         )

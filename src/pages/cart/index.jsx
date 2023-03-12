@@ -105,6 +105,7 @@ export default function Cart() {
                             <div>Корзина пуста</div>
                         )
                     }
+                    <div className={styles.oreder}></div>
                 </div>
             </div>
         </Layout>
