@@ -148,6 +148,7 @@ export const shopSlice = createSlice({
     shop: {},
     goods: {},
     goodsShop: [],
+    goodsCategory: [],
     listShopForCategory: shopData,
     listShop: shopData,
   },
@@ -164,6 +165,15 @@ export const shopSlice = createSlice({
         (shop) => shop.category === action.payload
       );
     },
+    changeCategoryGoods: (state, action) => {
+      if (action.payload === "Все") {
+        state.goodsShop = state.goodsCategory;
+        return;
+      }
+      state.goodsShop = state.goodsCategory.filter(
+        (goods) => goods.category === action.payload
+      );
+    },
     getGoods: (state, action) => {
       console.log(state);
       state.goods = state.goodsShop.filter((goods) => goods.id === action);
@@ -177,7 +187,6 @@ export const shopSlice = createSlice({
       .addCase(fetchAllShopData.fulfilled, (state, action) => {
         state.isLoadingListShop = false;
         state.listShopForCategory = action.payload;
-        console.log(action.payload);
         state.listShop = action.payload;
       })
       .addCase(fetchAllShopData.rejected, (state, action) => {
@@ -188,11 +197,9 @@ export const shopSlice = createSlice({
     builder
       .addCase(fetchShopData.pending, (state) => {
         state.isLoadingShop = true;
-        console.log('pending');
       })
       .addCase(fetchShopData.fulfilled, (state, action) => {
         state.isLoadingShop = false;
-        console.log('finish');
         state.shop = action.payload;
       })
       .addCase(fetchShopData.rejected, (state, action) => {
@@ -207,6 +214,7 @@ export const shopSlice = createSlice({
       .addCase(fetchGoodsDataByIdShop.fulfilled, (state, action) => {
         state.isLoadingGoodsShop = false;
         state.goodsShop = action.payload;
+        state.goodsCategory = action.payload;
       })
       .addCase(fetchGoodsDataByIdShop.rejected, (state, action) => {
         state.isLoadingGoodsShop = false;
@@ -228,5 +236,5 @@ export const shopSlice = createSlice({
   },
 });
 
-export const { getShop, changeCategoryShop, getGoods } = shopSlice.actions;
+export const { getShop, changeCategoryShop, getGoods, changeCategoryGoods } = shopSlice.actions;
 export default shopSlice.reducer;

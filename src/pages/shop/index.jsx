@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchGoodsDataByIdShop, fetchShopData } from "../../redux/features/shop";
 import { backendURL } from "../../config";
 import Layout from "../../components/Layout";
@@ -15,6 +15,7 @@ import { ReactComponent as PhoneSVGIcon } from '../../assets/icon/shop/phone_por
 import { ReactComponent as MessageSVGIcon } from '../../assets/icon/shop/message_writing.svg';
 import { ReactComponent as RubleSVGIcon } from '../../assets/icon/shop/9113455_ruble_sign_solid_icon.svg';
 import Loader from "../../components/loader";
+import ListBtnGoodsCategory from "../../components/shop/ListBtnGoodsCategory";
 
 
 let id;
@@ -26,20 +27,30 @@ export function loaderShop({ params }) {
 export default function Shop() {
     const navigate = useNavigate();
     const { shop, isLoadingShop, goodsShop } = useSelector((state) => state.shop);
+    const [styleBlock, setStyleBlock] = useState(null);
+    const phoneBlockRef = useRef(null);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchShopData(id));
         dispatch(fetchGoodsDataByIdShop(id));
     }, [dispatch]);
-
+    
+    
+    function showBlock(style) {
+        if (styleBlock) {
+            setStyleBlock(null);
+            return
+        }
+        setStyleBlock(style);
+    }
 
     return (
         <Layout header={false}>
             <HeaderAlt title={shop.name} path={'/'} />
             <div className={`${styles.app} App`}>
                 {
-                    Object.keys(shop).length > 0 && !isLoadingShop? (
+                    Object.keys(shop).length > 0 && !isLoadingShop ? (
 
                         <div className={styles.container}>
                             <div className={styles.image}>
@@ -72,7 +83,7 @@ export default function Shop() {
                                                 <p>Маршрут</p>
                                                 <LocationSVGIcon width={25} height={25} style={{ marginTop: 6 }} />
                                             </div>
-                                            <div className={styles.navBtn}>
+                                            <div className={styles.navBtn} onClick={() => showBlock(styles.animBlockPhones)}>
                                                 <p>Позвонить</p>
                                                 <PhoneSVGIcon width={25} height={25} style={{ marginTop: 6 }} />
                                             </div>
@@ -82,6 +93,21 @@ export default function Shop() {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div ref={phoneBlockRef} className={styles.blockPhones + ' ' + styleBlock}>
+                                    {
+                                        shop.shopPhoneNumbers.map((phone, index) => {
+                                            return (
+                                                <>
+                                                    <div className={styles.phone} key={index}>
+                                                        <p className={styles.phoneName}>{phone.name}</p>
+                                                        <p className={styles.phoneNumber}>{phone.phone}</p>
+                                                    </div>
+                                                </>
+                                            )
+                                        })
+                                    }
                                 </div>
 
 
@@ -127,7 +153,7 @@ export default function Shop() {
 
                                 <div className={styles.goods}>
                                     <p className={styles.caption}>Товары</p>
-
+                                    <ListBtnGoodsCategory />
                                     {goodsShop.map((goods, index) => {
                                         return (
                                             <div className={styles.itemGoods} key={index} onClick={() => {
@@ -152,7 +178,7 @@ export default function Shop() {
                             </div>
                         </div>
                     ) : (
-                        <Loader styleImg={{width: '25%', height: '16%'}} />
+                        <Loader styleImg={{ width: '25%', height: '16%' }} />
                         // <div>Загрузка</div>
                     )
                 }

@@ -266,3 +266,53 @@
     height: 100%;
     border-radius: 6px;
 }
+
+
+/* blocks */
+
+.blockPhones{
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    height: fit-content;
+    opacity: 0;
+    height: 0;
+    /* top: 40%; */
+    /* left: 4%; */
+    transition: 0.5s;
+    padding: 7px;
+    padding-left: 2px;
+    /* margin-bottom: 20px; */
+    /* padding-top: 20px; */
+    /* position: absolute; */
+    border-radius: 6px;
+    /* margin-left: -5px; */
+    /* box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.2); */
+    background-color: white;
+}
+
+.blockPhones .caption{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.phoneName{
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.phoneNumber{
+    font-size: 17px;
+}
+
+.animBlockPhones{
+    height: fit-content;
+    opacity: 1;
+}
