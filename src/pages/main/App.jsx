@@ -28,9 +28,8 @@ function App() {
 
 
     tg.enableClosingConfirmation();
-    if (userToken) {
-      navigate("auth");
-    }
+    if (!userToken) return navigate("auth");
+
 
     dispatch(fetchAllShopData());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -59,10 +58,10 @@ function App() {
                   <ListShop dataShop={listShop} />
                 </>
               ) : (
-                  <Loader styleImg={{
-                    width: '30%',
-                    height: '25%'
-                  }} />
+                <Loader styleImg={{
+                  width: '30%',
+                  height: '25%'
+                }} />
               )
             }
           </div>
