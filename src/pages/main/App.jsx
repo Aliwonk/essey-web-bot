@@ -28,16 +28,16 @@ function App() {
 
 
     tg.enableClosingConfirmation();
-    if (!userToken) return navigate("auth");
+    if (userToken) return navigate("auth");
 
 
     dispatch(fetchAllShopData());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // tg.MainButton.onClick(() => {
-  //   tg.close();
-  // });
+  tg.MainButton.onClick(() => {
+    tg.close();
+  });
   return (
     <>
       <Layout>
