@@ -38,6 +38,7 @@ export default function Auth() {
         socket.emit("auth-bot", uniqKey);
         tg.openTelegramLink(botLoginURL);
         setIsLoading(true);
+        console.log('auth');
       });
 
       socket.on("result-auth", (response) => {
