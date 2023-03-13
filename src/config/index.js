@@ -1,4 +1,4 @@
-export const backendURL = 'https://1306812-co40634.tw1.ru';
+export const backendURL = 'https://unigi.ru';
 export const botLoginURL = 'https://t.me/TeliveryLogin_bot';
 
 // 1306812-co40634.tw1.ru   
