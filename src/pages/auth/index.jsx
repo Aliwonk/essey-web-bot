@@ -36,7 +36,7 @@ export default function Auth() {
       const uniqKey = generateUniqKey();
       socket.on("connect", () => {
         socket.emit("auth-bot", uniqKey);
-        tg.openTelegramLink(botLoginURL);
+        tg.openTelegramLink(`${botLoginURL}?start=${uniqKey}`);
         setIsLoading(true);
         console.log('auth');
       });
