@@ -35,9 +35,9 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  tg.MainButton.onClick(() => {
-    tg.close();
-  });
+  // tg.MainButton.onClick(() => {
+  //   tg.close();
+  // });
   return (
     <>
       <Layout>
